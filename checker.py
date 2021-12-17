@@ -1,5 +1,16 @@
+#! usr/bin/python
+# -*- coding: ISO-8859-1 -*-
+# Spritrl - REALINI Christophe 17/12/2021 - FR
+
+import sys
+
 isPythonFile = False
-fileName = 'script.js'
+
+if len(sys.argv) < 2:
+    print('You need to put your file in argument.')
+    sys.exit()
+
+fileName = sys.argv[len(sys.argv)-1]
 
 if fileName[-2:] == 'py':
     isPythonFile = True
