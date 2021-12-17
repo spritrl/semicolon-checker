@@ -1,11 +1,15 @@
-f = open("script.js", "r")
+isPythonFile = False
+fileName = 'script.js'
 
-pythonFile = False
-accepted = ['{', '}', ':', ';', '*', '/', '\n']
-line = 0
-fails = []
+if fileName[-2:] == 'py':
+    isPythonFile = True
+    print('Are you serious ? You don\'t need semicolon in Python :)')
 
-if pythonFile == False:
+if isPythonFile == False:
+    f = open(fileName, 'r')
+    accepted = ['{', '}', ':', ';', '*', '/', '\n']
+    line = 0
+    fails = []
     for l in f:
         line += 1
         lineSize = len(l)
